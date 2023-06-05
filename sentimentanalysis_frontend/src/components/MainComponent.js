@@ -4,6 +4,7 @@ import Search from "./SearchComponent"
 import Login from "./LoginComponent"
 import Home from "./HomeComponent"
 import Profile from "./ProfileComponent"
+import SignUp from "./SignUpComponent"
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 function Main() {
@@ -21,6 +22,10 @@ function Main() {
                 <Route
                     path="/login"
                     element={<Login setIsLoggedIn={setIsLoggedIn} />}
+                />
+                <Route
+                    path="/signup"
+                    element={<SignUp setIsLoggedIn={setIsLoggedIn} />}
                 />
                 <Route path="/*" element={<Navigate to="/home" replace />} />
             </Routes>

@@ -1,5 +1,5 @@
 .bttn{
-    background-image: linear-gradient(to left, darkviolet,purple);
+    background-image: linear-gradient(to left, #DA22FF, #9733EE);
     color: white;
 }
 .bttn:hover{

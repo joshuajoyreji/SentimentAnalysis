@@ -3,7 +3,7 @@ import './HeaderCSS.css';
 import { Navbar, NavItem, NavbarToggler, Collapse, Nav, NavbarBrand, Button } from 'reactstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-function Header({ isLoggedIn, handleLogout }) { 
+function Header({ isLoggedIn, handleLogout }) {
     const [isOpen, setIsOpen] = React.useState(false);
     const navigate = useNavigate();
     const handleLogoutClick = () => {

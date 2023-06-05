@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Login({ setIsLoggedIn }) {
+function SignUp({ setIsLoggedIn }) {
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -18,8 +23,12 @@ function Login({ setIsLoggedIn }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Login logic
-        console.log('username:', username);
-        // console.log('Password:', password);
+        if (!email.includes('@')) {
+            setError('Invalid email format');
+            return;
+        }
+        console.log('Email:', email);
+        console.log('Password:', password);
 
         // Perform actual login logic here, for example, by making an API call
 
@@ -29,7 +38,7 @@ function Login({ setIsLoggedIn }) {
         // Redirect the user to the desired page after successful login
         navigate('/home');
 
-        setUsername('');
+        setEmail('');
         setPassword('');
         setError('');
     };
@@ -38,7 +47,7 @@ function Login({ setIsLoggedIn }) {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-6">
-                    <h1 className="offset-5 mt-5">Login</h1>
+                    <h1 className="offset-5 mt-5">Sign Up</h1>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 mt-4">
                             <label htmlFor="username" className="form-label fs-5">
@@ -50,6 +59,19 @@ function Login({ setIsLoggedIn }) {
                                 id="username"
                                 value={username}
                                 onChange={handleUsernameChange}
+                                required
+                            />
+                        </div>
+                        <div className="mb-3 ">
+                            <label htmlFor="email" className="form-label fs-5">
+                                Email:<span style={{ color: 'red' }}>*</span>
+                            </label>
+                            <input
+                                type="email"
+                                className="form-control"
+                                id="email"
+                                value={email}
+                                onChange={handleEmailChange}
                                 required
                             />
                         </div>
@@ -70,11 +92,11 @@ function Login({ setIsLoggedIn }) {
                             Login
                         </button>
                     </form>
-                    <p className='mt-3'>Don't have an account? <Link to='/signup'>Sign Up</Link> </p>
+                    <p className='mt-3'>Already have an account? <Link to='/login'>Login</Link> </p>
                 </div>
             </div>
         </div>
     );
 }
 
-export default Login;
+export default SignUp;

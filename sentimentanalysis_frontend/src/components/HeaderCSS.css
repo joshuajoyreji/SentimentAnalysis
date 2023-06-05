@@ -1,5 +1,5 @@
-.navb{
-    background-image: linear-gradient(to right, pink 10%, darkviolet,purple);
+.navb {
+    background-image: linear-gradient(to right, #DA22FF, #9733EE);
 }
 
 .heading {
@@ -11,17 +11,19 @@
 .content:hover {
     color: white;
 }
+
 .content {
     font-size: x-large;
     color: lightblue;
     margin-left: 20px;
 }
 
-.lbutn{
+.lbutn {
     background-color: darkred;
     color: white;
 }
-.lbutn:hover{
+
+.lbutn:hover {
     background-color: white;
     color: red;
 }
@@ -31,8 +33,9 @@
     color: purple;
     margin-right: 20px;
 }
+
 .butn:hover {
-    background-image: linear-gradient(to left, darkviolet,purple);
+    background-image: linear-gradient(to left, darkviolet, purple);
     color: white;
 }
 
