@@ -1,5 +1,5 @@
 {
-  "name": "sentiment_analysis",
+  "name": "sentimentanalysis_frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

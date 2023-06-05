@@ -2,3 +2,7 @@
     background-image: linear-gradient(to left, darkviolet,purple);
     color: white;
 }
+.bttn:hover{
+    color:white;
+    transform:scale(1.05,1.05);
+}

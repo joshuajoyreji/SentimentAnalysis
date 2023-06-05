@@ -5,6 +5,7 @@
 .heading {
     font-size: xx-large;
     color: black;
+    font-weight: bold;
 }
 
 .content:hover {

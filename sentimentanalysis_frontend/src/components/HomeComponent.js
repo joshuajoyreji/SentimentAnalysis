@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomeCSS.css'
-function Home({isLoggedIn}) {
+function Home({ isLoggedIn }) {
     return (
         <div className="container mt-5">
             <h1>Welcome to Twitter Sentiment Analysis</h1>
@@ -17,8 +17,9 @@ function Home({isLoggedIn}) {
             </ul>
             <h2>How to Use:</h2>
             <ol>
-                <li>Enter a tweet text in the input field to analyze its sentiment classification.</li>
-                <li>Click the "Analyze" button to perform sentiment analysis on the provided tweet.</li>
+                <li>Login with your email/username and password. If you don't have an account, sign up first.</li>
+                <li>Navigate to the search page.</li>
+                <li>Enter the tweet text in the input field and click the "Search" button.</li>
                 <li>View the sentiment analysis result, which will classify the tweet as positive or negative.</li>
                 <li>Explore additional features like data visualization and exporting results.</li>
             </ol>
@@ -26,7 +27,7 @@ function Home({isLoggedIn}) {
                 By analyzing the sentiment of tweets, you can gain insights into public opinion, track brand sentiment, or understand the sentiment expressed in specific tweets. Start analyzing tweet sentiments now and discover valuable insights from your dataset.
             </p>
             {isLoggedIn ? (
-                <Link to="/search" className="btn  bttn">Get Started</Link>
+                <Link to="/search" className="btn  bttn">Search</Link>
             ) : (
                 <Link to="/login" className="btn bttn">Get Started</Link>)}
         </div>
